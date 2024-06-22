@@ -1,0 +1,98 @@
+<html>
+<head>
+     <title>Birthday App by Shrusti Tambe</title>
+     <style>
+         *{font-size:60px;font-family: "Times New Roman", Times, serif;}
+              body{background-color:#DDA0DD;}
+              h1{background-color:black;color:white;width:400px;border-radius:40px;}
+              .btn{width:20%;background-color:#FFC0CB;color:black;border-radius:5%}
+              input[type="radio"]{width:2%;height:0.8em;}
+
+
+         /* Example CSS for a repeating linear gradient background */
+body {
+  /* Define the repeating linear gradient */
+  background: repeating-linear-gradient(
+    45deg,             /* Direction of the gradient */
+    #ffcc00,           /* Start color */
+    #ffcc00 10px,      /* End color of the first stripe */
+    #ff6699 10px,      /* Start color of the second stripe */
+    #ff6699 20px       /* End color of the second stripe */
+  );
+}
+
+/* Apply to a specific element */
+.element {
+  width: 200px;
+  height: 200px;
+  /* Define the repeating linear gradient */
+  background: repeating-linear-gradient(
+    90deg,             /* Direction of the gradient */
+    #ffcc00,           /* Start color */
+    #ffcc00 20px,      /* End color of the first stripe */
+    #ff6699 20px,      /* Start color of the second stripe */
+    #ff6699 40px       /* End color of the second stripe */
+  );
+}
+
+     </style>
+</head>
+
+<body>
+ <center>
+     <h1> Birthday App </h1>
+     <form onSubmit="operations()">
+         <input type="submit" value="Add" class="btn"/>
+         <input type="submit" value="Remove" class="btn"/>
+         <input type="submit" value="Show" class="btn"/>
+</form>
+<h2 id="msg"/>
+
+<script>
+ let names=["kamal","harshal"];
+ function operations()
+ {
+   event.preventDefault();
+   let msg=document.getElementById("msg");
+   let ele=document.activeElement.value;
+ 
+   if(ele=="Add")
+    {
+       let n=prompt("enter name");
+       if(n!="")
+       {
+         names.push(n);
+         msg.innerHTML=names;
+        }
+     }
+    else if(ele=="Remove")
+      {
+         let n=prompt("enter name to be removed");
+         if(n!="")
+            {
+               let pos=names.indexOf(n);
+               if(pos==-1)
+               {
+                 alert(n+" not found");
+                    
+               }
+               else
+               {
+                 name.splice(pos,1);
+                 alert(n+"removed");
+                  name.focus();
+                  
+                }
+                msg.innerHTML=names;
+
+            }
+        }
+        else if(ele=="Show")
+        {
+             msg.innerHTML=names;
+        }
+      }
+ </script>
+</center>
+</body>
+</html>
